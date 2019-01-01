@@ -1,0 +1,18 @@
+<?php session_start(); ?>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+  </head>
+  <body>
+    <h1>Login</h1>
+    <form action="php/login.php" method="post">
+      <div class="login">
+            Email/Username <input type="text" name="email"><?php echo "$_SESSION[msg]"; ?><br>
+            Password <input type="password" name="password" required="required"><br>
+            <input type="submit" value="Login">
+    <a href="signup.html">Sign Up</a>
+</form>
+
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <h1>Sign Up</h1>
+    <p>*All fields are required</p>
+    <form class="signup" action="/evem/php/signup.php" method="post">
+    Name  <input type="text" name="name" class="signuup" required="required"> <br>
+    Password <input type="password" name="password" id="p" class="signup" required="required"> <br>
+    Confirm Password <input type="password" name="password2" id="p2" class="signup" required="required" onkeyup="pass_check()"> <label id="pass"></label> <br>
+    <script type="text/javascript">
+    function pass_check() {
+      var p=document.getElementById('p').value;
+      var p2=document.getElementById('p2').value;
+      if (p!=p2) {
+        var msg="Passwords dont match".fontcolor("red");
+        document.getElementById('pass').innerHTML=msg;
+      }
+      else {
+        var msg="Passwords match".fontcolor("green");
+          document.getElementById('pass').innerHTML=msg;
+      }
+    }
+
+    </script>
+    Email: <input type="email" name="email" class="signup" required="required"> <br>
+    Username <input type="text" name="username" class="signup" required="required"><br>
+    Gender: <input type="radio" name="gender" value="m" required="required">Male <input type="radio" name="gender" value="f" required="required">Female <br>
+    Mobile no. <input type="text" name="mobile" class="signuup" required="required"> <br>
+    Enrolment no. <input type="text" name="enroll" class="signuup" required="required"> <br>
+    Branch <input type="text" name="branch" class="signuup" required="required"> <br>
+    Year<input type="text" name="year" class="signuup" required="required"> <br>
+    Are You An Organizer? <input type="radio" name="organizer" value="y" required="required">Yes <input type="radio" name="organizer" value="n" required="required">No <br>
+    Security question : <select name="security_ques" >
+      <option value="0">Choose any one...</option>
+  <option>In which city you were born?</option>
+  <option>What is your mother's maiden name?</option>
+  <option>What is your pet's name?</option>
+  <option>What was the name of your first teacher?</option>
+  <option>What is your vehicle's registration number?</option>
+</select>
+Answer <input type="text" name="security_ans" class="signuup" required="required"> <br>
+<input type="submit" name="submit" value="submit" id="submit">          <input type="submit" name="submit" value="cancel" id="cancel">
+</form>
+  </body>
+</html>
