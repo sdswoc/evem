@@ -4,7 +4,7 @@ include('check_event_user.php');
 $sql="select *,DATE_FORMAT(date, '%D %b %y') 'da',TIME_FORMAT(start_at, '%h:%i %p') 'sti',TIME_FORMAT(end_at, '%h:%i %p') 'eti' from events order by date asc, start_at asc;";
   $result=$conn->query($sql);
   echo "<table class='table'>
-  <tr class='card-body shadow p-3 rounded'>
+  <tr class='card-body shadow p-3 rounded row'>
 
       <td class='font-weight-bold col'><h4>Name</h4></td>
       <td class='font-weight-bold col text-truncate'><h4>Description</h4></td>
@@ -26,7 +26,7 @@ $sql="select *,DATE_FORMAT(date, '%D %b %y') 'da',TIME_FORMAT(start_at, '%h:%i %
 while($r=$result->fetch_assoc()){
 
   $check_value=check_event($r['id']);
-  echo "    <tr class='card-body p-4 shadow rounded'>
+  echo "    <tr class='card-body p-4 shadow rounded row'>
               <td class='col'><a href='#' id='event_desc$r[id]'>$r[name]</a></td>
               <td class='col'>$r[description]</td>
               <td class='col'>$r[da]</td>
