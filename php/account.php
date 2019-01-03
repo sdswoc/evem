@@ -146,15 +146,15 @@
   <div class="form-group row">
     <label class="col-sm-2 col-form-label">Security Question</label>
     <div class="col-sm-10">
-      <select id="inputState" disabled="true" class="form-control-plaintext" name="security_ques">
+      <select disabled="true" class="form-control-plaintext" name="security_ques">
           <option>Choose any one...</option>
           <option <?php if(strcmp($r[security_ques],"In which city you were born?")==0) echo "selected"; ?>>In which city you were born?</option>
           <option <?php if(strcmp($r[security_ques],"What is your mother's maiden name?")==0) echo "selected"; ?> >What is your mother's maiden name?</option>
           <option <?php if(strcmp($r[security_ques],"What is your pet's name?")==0) echo "selected" ?>>What is your pet's name?</option>
           <option <?php if(strcmp($r[security_ques],"What was the name of your first teacher?")==0) echo "selected"; ?>>What was the name of your first teacher?</option>
           <option <?php if(strcmp($r[security_ques],"What is your vehicle's registration number?")==0) echo "selected"; ?>>What is your vehicle's registration number?</option>
-
-        </select>  </div>
+        </select>
+       </div>
   </div>
   <div class="form-group row">
     <label class="col-sm-2 col-form-label">Security Answer</label>
@@ -190,6 +190,7 @@
         var edit_account=confirm("Are You Sure");
         if(edit_account){
         $("input").removeAttr("disabled");
+        $("select").removeAttr("disabled");
         $("#security_ans").attr("type","text");
         $("#confirm_password").removeAttr("hidden","hidden");
         $("#submit").removeAttr("hidden","hidden");

@@ -6,8 +6,8 @@ function show($s)
 {
   if ($s->num_rows>0) {
     while ($r=$s->fetch_assoc()) {
-      echo "  <div class='timeline__item'>
-          <div class='timeline__content'>
+      echo "  <div class='timeline__item '>
+          <div class='timeline__content '>
             <h2>$r[name]</h2>
             <h5>$r[sti] - $r[eti]</h5>    <h5>$r[da]</h5>
             <p class='text-truncate'>$r[description]</p>

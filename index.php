@@ -38,7 +38,7 @@ $_SESSION[index]=0; ?>
 <div class="mainbody">
 
   <div class="card ">
-    <div class="card-body shadow p-4  bg-white rounded ">
+    <div class="card-body shadow-lg p-4  bg-white rounded ">
       <div class="icon text-center">
         <img src="/evem/images/evem.jpg" class="img-fluid"alt="">
       </div>
@@ -54,11 +54,11 @@ $_SESSION[index]=0; ?>
     </div>
       </div>
       <div class="card ">
-        <div class="card-body shadow p-4  bg-white rounded " >
-  <div class="card-body shadow-lg p-4 bg-yellow rounded ">
+        <div class="card-body shadow-lg p-4  bg-white rounded " >
+  <div class="card-body shadow-lg-lg p-4 bg-yellow rounded ">
             <h2 id="t" class="text-center display-4">All Events</h2>
           </div>
-  <div class="card-body shadow-lg p-4 bg-yellow rounded ">
+  <div class="card-body shadow-lg-lg p-4 bg-yellow rounded ">
             <div class="timeline" data-visible-items="<?php include('visible'); echo "$v"; ?>">
               <div class="timeline__wrap">
                 <div class="timeline__items">

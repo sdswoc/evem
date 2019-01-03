@@ -191,6 +191,10 @@ $("#username").keyup(function(event) {
   });
 
 });
+var m="<?php echo $_SESSION[msg_signup]; ?>";
+if(m)
+  alert(m);
+<?php $_SESSION[msg_signup]=""; ?>
 	</script>
 
   </body>

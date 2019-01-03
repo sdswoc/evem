@@ -27,17 +27,17 @@
     <?php require('modules/header.php');?>
 <div class="mainbody">
   <div class="card ">
-    <div class="card-body shadow p-4  bg-white rounded ">
+    <div class="card-body shadow-lg p-4  bg-white rounded ">
       <h2 class="text-center display-4">Welcome! <?php echo "$_SESSION[name]"; ?></h2>
       <hr/>
       <div class="card ">
-        <div id="t" class="card-body shadow bg-yellow p-4  rounded ">
+        <div id="t" class="card-body shadow-lg bg-yellow p-4  rounded ">
       <h1 class="text-center">Your Timeline</h1>
     </div>
     </div>
       <div class="card ">
-        <div class="card-body shadow-lg bg-yellow p-4  rounded ">
-      <div class="timeline" data-visible-items="  <?php include('php/visible.php'); echo $v;?>">
+        <div class="card-body shadow-lg-lg bg-yellow p-4  rounded ">
+      <div class="timeline rounded" data-visible-items="  <?php include('php/visible.php'); echo $v;?>">
         <div class="timeline__wrap">
           <div class="timeline__items">
 
@@ -50,7 +50,7 @@
   </div>
   </div>
       <div class="card ">
-          <div class="card-body shadow p-4 align-middle bg-white rounded">
+          <div class="card-body shadow-lg p-4 align-middle bg-white rounded">
             <div class="table">
             <div class="row">
               <div class="col-xl d-inline">
@@ -66,7 +66,7 @@
   </div>
     </div>
     <div class="card ">
-        <div class="card-body shadow p-0 bg-white rounded ">
+        <div class="card-body shadow-lg p-0 bg-white rounded ">
 
     <div id="ed">
       <div class='time'>
