@@ -9,8 +9,8 @@ function show($s)
       echo "  <div class='timeline__item'>
           <div class='timeline__content'>
             <h2>$r[name]</h2>
-            <h4>$r[sti] - $r[eti]</h4>    <h4>$r[da]</h4>
-            <p>$r[description]</p>
+            <h5>$r[sti] - $r[eti]</h5>    <h5>$r[da]</h5>
+            <p class='text-truncate'>$r[description]</p>
           </div>
         </div>";
     }

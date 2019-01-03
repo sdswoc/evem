@@ -30,7 +30,7 @@ $r=$result->fetch_assoc();
                  <li>For : $r[for_people]</li>
                  <li id='contact'>Contact : $r[contact] </li>
                  <li id='rating'>Rating : $r[rating]</li>
-                 <li id='feedback'><a  href='http://localhost/evem/php/feedback.php?i=$r[id]'>Feedback</a></li>
+                 <li id='feedback'><a  href='/evem/php/feedback.php?i=$r[id]'>Feedback</a></li>
                </ul>
              </div>
            </div>";

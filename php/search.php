@@ -24,8 +24,8 @@
   <body>
     <?php require('../modules/header.php');?>
     <div class="mainbody">
-      <div class="card main">
-        <div class="card-body shadow p-4  shadow ">
+      <div class="card">
+        <div class="card-body shadow p-4  shadow bg-yellow rounded ">
           <h2>Search</h2>
             Search By <br>
             <form class="search" action="search.php" method="post">

@@ -32,7 +32,7 @@ echo "<table>
                 <td>$r[for_people]</td>
                 <td>$r[contact]</td>
                 <td>$r[rating]</td>
-                <td><a href='http://localhost/evem/php/feedback.php?i=$r[id]'>Feedback</a></td>
+                <td><a href='/evem/php/feedback.php?i=$r[id]'>Feedback</a></td>
                 </tr>
                 ";
 

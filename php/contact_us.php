@@ -23,17 +23,16 @@
 
   <?php require('../modules/header.php');?>
   <div class="mainbody">
-
-
       <div class="card" id='contact_us'>
-        <div class="card-content p-5 shadow">
-
-
-      <h4> Adrij Shikhar <br> </h4>
-        B. Tech 1st Year <br>
+        <div id="t" class="card-content p-5 shadow  display-4 rounded">
+      <div class="display-2 bg-yellow card-content p-4 shadow rounded"> Adrij Shikhar <br> </div>
+      <div class="bg-yellow card-content p-4 shadow rounded">
+        B. Tech Chemical 1st Year <br>
         18121003 <br>
         8218058928 <br>
          <a href="https://www.facebook.com/adrij.shikhar">Facebook</a>
+      </div>
+
   </div>
       </div>
     </div>

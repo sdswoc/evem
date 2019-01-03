@@ -39,7 +39,7 @@ $r=$conn->query("select *,DATE_FORMAT(date, '%D %b %y') 'da',TIME_FORMAT(start_a
         .body{
           color:grey;
         }
-    
+
       </style>
   </head>
 

@@ -8,6 +8,12 @@ margin-top: 90px;
 background-color: #56BAED;
 
 }
+.bg-yellow{
+  background-color: #FFDB70;
+}
+#t{
+  color: #660B00;
+}
 textarea {
    resize: none;
 }
@@ -214,5 +220,5 @@ border: none;
 }
 
 #contact_us{
-max-width: 480px;
+max-width: 980px;
 }

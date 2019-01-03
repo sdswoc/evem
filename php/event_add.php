@@ -67,5 +67,8 @@ if(check_data()){
 else
   $_SESSION[msg_event]="Error! Time Slot clashing!";
 }
-header( "refresh:0;url=http://localhost/evem/php/event_manage.php" );
+$host  = $_SERVER['HTTP_HOST'];
+$uri="/evem/php/event_manage.php";
+$event_manage_url="http://".$host.$uri;
+header( "Location:$event_manage_url" );
 ?>

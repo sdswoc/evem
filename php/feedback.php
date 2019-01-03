@@ -28,11 +28,20 @@
       <h1>Feedback</h1>
       <h3>Add Feedback</h3>
         <form class="feedback_add" action="feedback_add.php" method="post">
-            Rating (out of 5) <input type="text" name="rating" class="feedback_add"> <br>
-            Feedback <br> <textarea name="feedback" class="feedback_add" rows="8" cols="80"></textarea> <br>
+          <div class="row form-group">
+            <div class="col-2 ">
+            Rating (out of 5) </div> <div class="col-1"><input type="text" name="rating" class="feedback_add"> </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-2 ">
+            Feedback</div> <div class="col-1"><textarea name="feedback" class="feedback_add" rows="8" cols="80"></textarea> </div>
+          </div>
+          <div class="text-center">
             <input type="hidden" name="id" value="<?php echo "$_SESSION[id]"; ?>">
             <input type="submit" name="submit" value="Submit"> <input type=button onClick="location.href='/evem/welcome.php'" value='Cancel'>
-        </form>
+
+          </div>
+      </form>
       </div>
       </div>
 <div class="card">
