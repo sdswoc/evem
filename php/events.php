@@ -27,7 +27,7 @@ while($r=$result->fetch_assoc()){
 
   $check_value=check_event($r['id']);
   echo "    <tr class='card-body p-4 shadow rounded'>
-              <td class='col'>$r[name]</td>
+              <td class='col'><a href='#' id='event_desc$r[id]'>$r[name]</a></td>
               <td class='col'>$r[description]</td>
               <td class='col'>$r[da]</td>
               <td class='col'>$r[sti]</td>
@@ -44,6 +44,10 @@ while($r=$result->fetch_assoc()){
                   let v=document.getElementById('toggle$r[id]').checked;
                   $.post('interested_user.php', {checked_value: v,id:'$r[id]'});
                 }
+                $('#event_desc$r[id]').click(function(event){
+                  event.preventDefault();
+                      window.location.replace('/evem/php/event_desc.php?i=$r[id]');
+                });
               </script>
             </td>
           </tr>";
