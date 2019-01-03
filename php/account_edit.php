@@ -14,8 +14,9 @@ $year=$_POST['year'];
 $organizer=$_POST['organizer'];
 $security_ques=$_POST['security_ques'];
 $security_ans=$_POST['security_ans'];
-
+$alter_event_user_table_name="alter table event_$_SESSION[username] rename to event_$username;";
 $sql="update users set name='$name', password='$password', email='$email', username='$username',gender='$gender',mobile='$mobile',enroll='$enroll', branch='$branch', year='$year',organizer='$organizer', security_ques='$security_ques', security_ans='$security_ans' where id=$id;";
+$conn->query($alter_event_user_table_name);
 if ($conn->query($sql)) {
   $_SESSION[msg_account]="Changes Saved";
   $_SESSION[name]=$name;

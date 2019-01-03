@@ -299,7 +299,7 @@ animation-fill-mode: both;
   </ul>
     <!-- Icon -->
     <div class="fadeIn first">
-      <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+      <img src='/evem/images/user.png' id="icon" alt="User Icon" style="width:300px" />
     </div>
 
     <!-- Login Form -->

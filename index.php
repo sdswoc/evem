@@ -17,6 +17,18 @@ $_SESSION[index]=0; ?>
   <link rel="stylesheet" type="text/css" href="/evem/css/animate.css" />
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
       <meta charset="utf-8">
+      <style media="screen">
+        .header{
+          color: #000957;
+        }
+        .tagline{
+          color: grey;
+        }
+        img{
+          width: 130px;
+
+        }
+      </style>
     <title>
       evem - Event Management System
     </title>
@@ -25,7 +37,27 @@ $_SESSION[index]=0; ?>
     <?php require('modules/header.php');?>
 <div class="mainbody">
 
-
+  <div class="card ">
+    <div class="card-body shadow p-4  bg-white rounded ">
+      <div class="icon text-center">
+        <img src="/evem/images/evem.jpg" class="img-fluid"alt="">
+      </div>
+      <div class="display-1 text-center header">
+        evem
+      </div>
+      <div class="text-center tagline">
+        <h3>EVENT MANAGEMENT SYSTEM</h3>
+      </div>
+      <div class="text-center " style="color:grey">
+        <h5>A simple materialistsic designed website to reduce your hassle and provide you brain candies for your diverse interests.</h5>
+      </div>
+    </div>
+      </div>
+      <div class="card ">
+        <div class="card-body shadow p-4  bg-white rounded ">
+      <div class="display-3">
+        All Events
+      </div>
   <div class="timeline" data-visible-items="<?php include('visible'); echo "$v"; ?>">
     <div class="timeline__wrap">
       <div class="timeline__items">
@@ -35,6 +67,8 @@ $_SESSION[index]=0; ?>
     </div>
   </div>
 </div>
+</div>
+  </div>
   <script type="text/javascript" src="dist/js/timeline.min.js"></script>
   <script>
   timeline(document.querySelectorAll('.timeline'), {
