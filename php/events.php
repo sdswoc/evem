@@ -6,17 +6,17 @@ $sql="select *,DATE_FORMAT(date, '%D %b %y') 'da',TIME_FORMAT(start_at, '%h:%i %
   echo "<table class='table'>
   <tr class='card-body shadow p-3 rounded'>
 
-      <td><h4>Name</h4></td>
-      <td><h4>Description</h4></td>
-      <td><h4>Date</h4></td>
-      <td><h4>Start At</h4></td>
-      <td><h4>End At</h4></td>
-      <td><h4>Venue</h4></td>
-      <td><h4>For</h4></td>
-      <td><h4>Contact</h4></td>
-      <td><h4>Rating</h4></td>
-      <td><h4>Feedback</h4></td>
-      <td><h4>Going?</h4></td>
+      <td class='font-weight-bold col'><h4>Name</h4></td>
+      <td class='font-weight-bold col text-truncate'><h4>Description</h4></td>
+      <td class='font-weight-bold col'><h4>Date</h4></td>
+      <td class='font-weight-bold col'><h4>Start At</h4></td>
+      <td class='font-weight-bold col'><h4>End At</h4></td>
+      <td class='font-weight-bold col'><h4>Venue</h4></td>
+      <td class='font-weight-bold col'><h4>For</h4></td>
+      <td class='font-weight-bold col'><h4>Contact</h4></td>
+      <td class='font-weight-bold col'><h4>Rating</h4></td>
+      <td class='font-weight-bold col'><h4>Feedback</h4></td>
+      <td class='font-weight-bold col'><h4>Going?</h4></td>
 
   </tr>
 
@@ -27,17 +27,17 @@ while($r=$result->fetch_assoc()){
 
   $check_value=check_event($r['id']);
   echo "    <tr class='card-body p-4 shadow rounded'>
-              <td>$r[name]</td>
-              <td>$r[description]</td>
-              <td>$r[da]</td>
-              <td>$r[sti]</td>
-              <td>$r[eti]</td>
-              <td>$r[venue]</td>
-              <td>$r[for_people]</td>
-              <td>$r[contact]</td>
-              <td>$r[rating]</td>
-              <td><a href='http://localhost/evem/php/feedback.php?i=$r[id]'>Feedback</a></td>
-              <td><label><input type='checkbox' class='ios-switch bigswitch' id='toggle$r[id]' onclick='go$r[id]()'/><div><div></div></div></label>
+              <td class='col'>$r[name]</td>
+              <td class='col'>$r[description]</td>
+              <td class='col'>$r[da]</td>
+              <td class='col'>$r[sti]</td>
+              <td class='col'>$r[eti]</td>
+              <td class='col'>$r[venue]</td>
+              <td class='col'>$r[for_people]</td>
+              <td class='col'>$r[contact]</td>
+              <td class='col'>$r[rating]</td>
+              <td class='col'><a href='/evem/php/feedback.php?i=$r[id]'>Feedback</a></td>
+              <td class='col'><label><input type='checkbox' class='ios-switch bigswitch' id='toggle$r[id]' onclick='go$r[id]()'/><div><div></div></div></label>
               <script>
               document.getElementById('toggle$r[id]').checked =$check_value;
                 function go$r[id](){

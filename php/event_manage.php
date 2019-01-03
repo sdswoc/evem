@@ -24,19 +24,103 @@
       <div class="card">
         <div class="card-content p-4 shadow bg-white rounded ">
         <h3>Add Event</h3>
+        <div class="container">
+
+
         <form class="event_add" action="event_add.php" method="post">
-        Name <input type="text" name="event_name" required> <br>
-        Brief Description <br> <textarea name="event_desc" rows="8" cols="80"  required></textarea> <br>
-        Start At <input type="time" name="start_at" required> <br>
-        End At <input type="time" name="end_at" required> <br>
-        Date <input type="date" name="date" required> <br>
-        Venue <input type="text" name="venue" required> <br>
-        For <input type="text" name="for_people" required> <br>
-        Contact <input type="text" name="contact" required> <br>
-        Authorized By <input type="text" name="auth" required> <br>
-        Resources <input type="text" name="resources" required> <br>
-        <input type="submit" name="submit" value="submit">         <input type="button" name="cancel" value="cancel">
+        <div class="row">
+          <div class="col-3 ">
+          Name
+          </div>
+          <div class="col form-group row">
+            <input type="text" name="event_name" class="form-control" required>
+          </div>
+
+          </div>
+          <div class="row">
+              <div class="col-3 ">
+                Brief Description
+              </div>
+              <div class="col form-group row">
+                <textarea name="event_desc" rows="5" cols="auto" class="form-control" required></textarea>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-3 ">
+                Start At
+
+              </div>
+              <div class="col form-group row">
+                <input type="time" name="start_at"  required>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-3 ">
+End At
+              </div>
+              <div class="col form-group row">
+<input type="time" name="end_at"  required>
+              </div>
+          </div>
+          <div class="row ">
+              <div class="col-3 ">
+    Date
+              </div>
+              <div class="col form-group row">
+<input type="date" name="date" required>
+              </div>
+          </div>
+          <div class="row ">
+              <div class="col-3 ">
+  Venue
+              </div>
+              <div class="col form-group row">
+<input type="text" name="venue" class="form-control" required>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-3 ">
+      For
+              </div>
+              <div class="col form-group row">
+<input type="text" name="for_people" class="form-control" required>
+              </div>
+          </div>
+          <div class="row ">
+              <div class="col-3 ">
+  Contact
+              </div>
+              <div class="col form-group row">
+<input type="text" name="contact" class="form-control" required>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-3 ">
+  Authorized By
+              </div>
+              <div class="col form-group row">
+<input type="text" name="auth" class="form-control" required>
+              </div>
+          </div>
+<div class="row">
+  <div class="col-3 ">
+      Resources
+  </div>
+  <div class="col form-group row">
+      <input type="text" name="resources" class="form-control" required>
+  </div>
+</div>
+
+
+<div class="row" >
+    <div class="col text-center" >
+      <input type="submit" name="submit" value="Submit">
+
+      <input type="button" name="cancel" value="Cancel" id="cancel_welcome">
+    </div>
+</div>
         </form>
+          </div>
       </div>
       </div>
       <div class="card">
@@ -49,6 +133,12 @@
         let r=<?php echo json_encode($_SESSION[msg_event]); ?>;
         if(r)
         alert(r);
+          $("#cancel_welcome").click(function(event) {
+            event.preventDefault();
+              window.location.replace('/evem/welcome.php');
+          });
+
+
         </script>
         <?php $_SESSION[msg_event]=""; ?>
       </div>

@@ -1,4 +1,4 @@
-<?php require('login_check.php'); ?>
+
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -21,7 +21,7 @@
   <body>
     <?php require('../modules/header.php');?>
     <div class="mainbody" >
-<div class="card p-4">
+<div class="card p-4 shadow bg-white rounded">
             <h1>All Events</h1>
               <?php include('rating.php');?>
               <?php include('events.php'); ?>

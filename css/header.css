@@ -8,9 +8,11 @@ margin-top: 90px;
 background-color: #56BAED;
 
 }
-
-.horizontal-timeline{
-
+textarea {
+   resize: none;
+}
+.border-0{
+  border: none;
 }
 .card{
 		 border: none;
@@ -129,15 +131,6 @@ ul.wtf-menu li.parent a{
 	padding: 0px 20px 0px 15px;
 }
 
-ul.wtf-menu li.parent:after{
-	font-family: 'Fontawesome';
-	content:"\f0d7";
-	color:#999;
-	position: absolute;
-	right: 5px;
-	top:0px;
-	margin-left: 5px;
-}
 
 ul.wtf-menu ul li.parent:after{
 	font-family: 'Fontawesome';

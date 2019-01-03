@@ -7,39 +7,39 @@ $sql="select *,DATE_FORMAT(date, '%D %b %y') 'da',TIME_FORMAT(start_at, '%h:%i %
 $result=$conn->query($sql);
 if($result->num_rows>0){
 echo "<table class='table'>
-<tr class='card-body shadow p-3 rounded'>
+<tr class='card-body shadow p-3 rounded row'>
 
-    <td> S.No.</td>
-    <td> Name </td>
-    <td> Description</td>
-    <td>Date</td>
-    <td>Start At</td>
-    <td>End At</td>
-    <td>Venue</td>
-    <td>For</td>
-    <td>Contact</td>
-    <td>Authorities</td>
-    <td>Resources</td>
-    <td></td>
+    <td class='col'>S.No.</td>
+    <td class='col'>Name</td>
+    <td class='col text-truncate'>Description</td>
+    <td class='col'>Date</td>
+    <td class='col'>Start At</td>
+    <td class='col'>End At</td>
+    <td class='col'>Venue</td>
+    <td class='col'>For</td>
+    <td class='col'>Contact</td>
+    <td class='col'>Authorities</td>
+    <td class='col'>Resources</td>
+    <td class='col'></td>
 </tr>
 ";
 $i=1;
 while (  $r=$result->fetch_assoc()) {
 
-  echo "   <tr class='card-body p-4 shadow rounded'>
-              <td>$i.</td>
-              <td>$r[name]</td>
-              <td>$r[description]</td>
-              <td>$r[da]</td>
-              <td>$r[sti]</td>
-              <td>$r[eti]</td>
-              <td>$r[venue]</td>
-              <td>$r[for_people]</td>
-              <td>$r[contact]</td>
-              <td>$r[auth]</td>
-              <td>$r[resources]</td>
-              <td> <a href=event_edit.php?id=$r[id]>Edit</a></td>
-              </tr>                                   ";
+  echo "   <tr class='card-body p-4 shadow rounded row'>
+              <td class='col'>$i.</td>
+              <td class='col'>$r[name]</td>
+              <td class='col'>$r[description]</td>
+              <td class='col'>$r[da]</td>
+              <td class='col'>$r[sti]</td>
+              <td class='col'>$r[eti]</td>
+              <td class='col'>$r[venue]</td>
+              <td class='col'>$r[for_people]</td>
+              <td class='col'>$r[contact]</td>
+              <td class='col'>$r[auth]</td>
+              <td class='col'>$r[resources]</td>
+              <td class='col'> <a href=event_edit.php?id=$r[id]>Edit</a></td>
+              </tr>";
               $i++;
 }
 echo " </table>";

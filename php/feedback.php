@@ -29,7 +29,7 @@
             Rating (out of 5) <input type="text" name="rating" class="feedback_add"> <br>
             Feedback <br> <textarea name="feedback" class="feedback_add" rows="8" cols="80"></textarea> <br>
             <input type="hidden" name="id" value="<?php echo "$_SESSION[id]"; ?>">
-            <input type="submit" name="submit" value="Submit"> <input type=button onClick="location.href='http://localhost/evem/welcome.php'" value='Cancel'>
+            <input type="submit" name="submit" value="Submit"> <input type=button onClick="location.href='/evem/welcome.php'" value='Cancel'>
         </form>
       </div>
       </div>

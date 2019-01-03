@@ -40,7 +40,7 @@
       <div class="card ">
           <div class="card-body shadow p-4  bg-white rounded">
         <h3>Subscribed Events</h3>
-  
+
     <?php if($_SESSION[organizer]=='y')  echo ' <a href="php/event_manage.php">Add/Edit Event</a> ';?>
     <?php include('php/rating.php');?>
   </div>
@@ -56,10 +56,9 @@
      <script type="text/javascript" src="dist/js/timeline.min.js"></script>
       <script>
       timeline(document.querySelectorAll('.timeline'), {
-      forceVerticalMode: 700,
+  
       mode: 'horizontal',
       verticalStartPosition: 'left',
-      forceVerticalWidth: 800
 
       });
       </script>

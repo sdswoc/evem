@@ -3,6 +3,7 @@ session_start();
 include('conn.php');
 $i=$_SESSION[id];
 $sql="select *,DATE_FORMAT(date, '%D %b %y') 'da',TIME_FORMAT(date, '%h:%i %p') 'ti' from feedback where id=$i order by date;";
+
 $result=$conn->query($sql);
 echo "<table class='table'>
 <tr class='card-body shadow p-3 rounded'>

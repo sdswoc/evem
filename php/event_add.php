@@ -41,9 +41,7 @@ if(isset($_POST['id']))
       $_SESSION[msg_event]="Event Edited";
 
 }
-else if(isset($event_name)){
-$_SESSION[msg_event]="Error! no event name";
-}
+
 else{
 $event_name=$_POST['event_name'];
 $event_desc=$_POST['event_desc'];
@@ -59,9 +57,12 @@ $by_organizer=$username;
 
 
 $sql="insert into events(name,description,start_at,end_at,date,venue,for_people,contact,auth,resources,by_organizer) values('$event_name','$event_desc','$start_at','$end_at','$date','$venue','$for_people','$contact','$auth','$resources','$by_organizer');";
+echo $sql;
 if(check_data()){
-  $conn->query($sql);
+  if($conn->query($sql)==true)
     $_SESSION[msg_event]="Event Added";
+  else
+    $_SESSION[msg_event]="Error";
 }
 else
   $_SESSION[msg_event]="Error! Time Slot clashing!";

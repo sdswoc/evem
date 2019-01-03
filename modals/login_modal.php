@@ -3,9 +3,9 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Login/Signup</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+  <link rel="stylesheet" href="/evem/css/bootstrap.min.css" >
     <style media="screen">
 
 
@@ -322,10 +322,11 @@ animation-fill-mode: both;
   <div id='signup'>
 	    <p>*All fields are required</p>
       <form action="/evem/php/signup.php" method="post">
-      <input type="text" name="name" placeholder="Name" required="required"> <br>
-      <input type="password" name="password" id="p" placeholder="Password" required="required" onkeyup="pass_check()"> <br>
-      <input type="password" name="password2" id="p2" placeholder="Confirm Passowrd" required="required" onkeyup="pass_check()"> <label id="pass"></label> <br>
+      <input type="text"  name="name" placeholder="Name" required="required"> <br>
+      <input type="password" name="password" id="p" placeholder="Password" required="required" onkeyup="pass_check()"> <br><label id="password_length_check_result"></label> <br>
+      <input type="password" name="password2" id="p2" placeholder="Confirm Passowrd" required="required" onkeyup="pass_check()"> <br><label id="pass"></label> <br>
       <script type="text/javascript">
+      var check_password=0;
       function pass_check() {
         var p=document.getElementById('p').value;
         var p2=document.getElementById('p2').value;
@@ -333,17 +334,19 @@ animation-fill-mode: both;
         if (p!=p2) {
           var msg="Passwords dont match".fontcolor("red");
           document.getElementById('pass').innerHTML=msg;
+          check_password=0;
         }
         else {
           var msg="Passwords match".fontcolor("green");
             document.getElementById('pass').innerHTML=msg;
+            check_password=1;
         }
       }
       }
 
       </script>
-       <input type="email" name="email" placeholder="Email" required="required"> <br>
-       <input type="text" name="username" placeholder="Username" required="required"><br>
+       <input type="email" id="signup_email" name="email" placeholder="Email" required="required"> <br><label class="text-danger" id="signup_email_result"></label> <br>
+       <input type="text" id="username"name="username" placeholder="Username" required="required"><br><label class="text-danger" id="username_result"></label> <br>
       Gender: <input type="radio" name="gender" value="m" required="required">Male <input type="radio" name="gender" value="f" required="required">Female <br>
        <input type="text" name="mobile" placeholder="Mobile" required="required"> <br>
        <input type="text" name="enroll" placeholder="Enroll No." required="required"> <br>
@@ -359,7 +362,9 @@ animation-fill-mode: both;
     <option>What is your vehicle's registration number?</option>
   </select>
    <input type="text" name="security_ans" placeholder="Answer" required="required"> <br>
-  <input type="submit" class="fadeIn fourth" value="Submit">
+   <input  hidden="true" name="check_password" id="check_password" value="">
+   <input  hidden="true" name="check_email" id="check_email" value="">
+  <input type="submit" class="fadeIn fourth" value="Submit" id="submit">
   </form>
   <div id='login_modal_msg'>
 
@@ -380,11 +385,19 @@ animation-fill-mode: both;
 
 
 <script type="text/javascript">
+$("#p").keyup(function(event){
+  event.preventDefault();
+  if($("#p").val().length<8)
+    $("#password_length_check_result").html("<div class='text-danger'>Password Length Too Small</div>");
+  else
+  $("#password_length_check_result").html("<div class='text-success'>Password Length Good</div>");
+});
         $('#login_modal_msg').empty();
 $('#login_button').on('click', function (e) {
   e.preventDefault();
  var email_input=$("#email").val();
  var password_input=$("#password").val();
+
   $.ajax({
       type:"post",
       url:"/evem/php/login.php",
@@ -400,14 +413,7 @@ $('#login_button').on('click', function (e) {
       }
   });
 });
-/*
-alert(flag);
-  if(flag==0)
 
-    $('#login_modal_msg').empty();
-  else if(flag==1)
-    $('#login_modal_msg').html("INVALID USERNAME OR PASSWORD");
-*/
   function go_index(){
     window.location.assign("/evem/index.php")
   }
@@ -428,7 +434,44 @@ alert(flag);
 	  $(target).fadeIn(600);
 
 	});
+$("#signup_email").keyup(function(event) {
+  event.preventDefault();
+  var email_input=$("#signup_email").val();
 
+  $.ajax({
+      type:"post",
+      url:"/evem/php/check_email_signup.php",
+      data:{email:email_input},
+      success:function(response){
+
+        if (response=="false") {
+          $("#signup_email_result").html("Email Already Exists");
+        }
+         else if(response=="true")
+          $("#signup_email_result").empty();
+      }
+  });
+
+});
+$("#username").keyup(function(event) {
+  event.preventDefault();
+  var username_input=$("#username").val();
+
+  $.ajax({
+      type:"post",
+      url:"/evem/php/check_username_signup.php",
+      data:{username:username_input},
+      success:function(response){
+
+        if (response=="false") {
+          $("#username_result").html("Username Already Exists");
+        }
+         else if(response=="true")
+          $("#username_result").empty();
+      }
+  });
+
+});
 	</script>
 
   </body>

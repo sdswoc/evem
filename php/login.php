@@ -14,7 +14,7 @@ $result=$conn->query($sql);
 $h=$result->fetch_assoc();
 
 if ($result->num_rows==1) {
-
+$_SESSION[id]=$h[id];
 $_SESSION[name]=$h[name];
 $_SESSION[email]=$h[email];
 $_SESSION[username]=$h[username];

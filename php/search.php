@@ -1,4 +1,4 @@
-<?php require('login_check.php'); ?>
+
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -53,37 +53,37 @@
         $search_input=$_POST[search_input];
 
         if(isset($_POST[search_input])){
-        $sql="select * from events where lower($choice) like '%$search_input%';";
+        $sql="select *,DATE_FORMAT(date, '%D %b %y') 'da',TIME_FORMAT(start_at, '%h:%i %p') 'sti',TIME_FORMAT(end_at, '%h:%i %p') 'eti' from events where lower($choice) like '%$search_input%' order by date;";
 
         $result=$conn->query($sql);
         if ($result->num_rows>0) {
         echo "<table class='table'>
-        <tr>
-            <td>Date</td>
-            <td> Name </td>
-            <td> Description</td>
-            <td>Start At</td>
-            <td>End At</td>
-            <td>Venue</td>
-            <td>For</td>
-            <td>Contact</td>
-            <td>Rating</td>
-            <td>Feedback</td>
+       <tr class='card-body p-3  rounded row'>
+            <td class='col'>Date</td>
+            <td class='col'>Name</td>
+            <td class='col'>Description</td>
+            <td class='col'>Start At</td>
+            <td class='col'>End At</td>
+            <td class='col'>Venue</td>
+            <td class='col'>For</td>
+            <td class='col'>Contact</td>
+            <td class='col'>Rating</td>
+            <td class='col'>Feedback</td>
         </tr>
           ";
 
           while ($r=$result->fetch_assoc()) {
-            echo "    <tr>
-                        <td>$r[date]</td>
-                        <td>$r[name]</td>
-                        <td>$r[description]</td>
-                        <td>$r[start_at]</td>
-                        <td>$r[end_at]</td>
-                        <td>$r[venue]</td>
-                        <td>$r[for_people]</td>
-                        <td>$r[contact]</td>
-                        <td>$r[rating]</td>
-                        <td><a href='http://localhost/evem/php/feedback.php?i=$r[id]'>Feedback</a></td>
+            echo "     <tr class='card-body p-3 rounded row'>
+                        <td class='col'>$r[da]</td>
+                        <td class='col'>$r[name]</td>
+                        <td class='col'>$r[description]</td>
+                        <td class='col'>$r[sti]</td>
+                        <td class='col'>$r[eti]</td>
+                        <td class='col'>$r[venue]</td>
+                        <td class='col'>$r[for_people]</td>
+                        <td class='col'>$r[contact]</td>
+                        <td class='col'>$r[rating]</td>
+                        <td class='col'><a href='/evem/php/feedback.php?i=$r[id]'>Feedback</a></td>
                         </tr>
                         ";
 

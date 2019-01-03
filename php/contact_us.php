@@ -1,4 +1,4 @@
-<?php require('login_check.php'); ?>
+
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
