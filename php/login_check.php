@@ -22,8 +22,8 @@ if($r['logged_in']!=1)
    $_SESSION[email]=$r[email];
    $_SESSION[username]=$r[username];
    $_SESSION[organizer]=$r[organizer];
-   if($_SERVER[REQUEST_URI]!==$uri)
+   if($_SERVER[REQUEST_URI]==="/evem/index.php")
       header("Location: $welcome_url");
-
+  
  }
 ?>

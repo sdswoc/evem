@@ -1,4 +1,6 @@
-
+html{
+font-size: 1vw;
+}
 @import 'https://fonts.googleapis.com/css?family=Raleway';
 body{background-color: #56BAED;}
 .mainbody{
@@ -6,7 +8,7 @@ height: 100%;
 padding: 0px 100px 100px 100px;
 margin-top: 90px;
 background-color: #56BAED;
-
+font-size:1vw;
 }
 .bg-yellow{
   background-color: #FFDB70;
@@ -32,7 +34,7 @@ textarea {
 ul.wtf-menu{
 	background: #000957;
 	border-radius: 3px;
-	font-size: 20px;
+
 	font-family: Raleway;
 margin: 0px;
 padding: 0.8em 0.8em;
@@ -182,6 +184,7 @@ ul.wtf-menu ul li.parent:after{
 	position: fixed;
   top: 0;
   width: 100%;
+font-size: 20px;
 }
 
 
