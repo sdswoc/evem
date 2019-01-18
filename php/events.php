@@ -22,8 +22,6 @@ $sql="select *,DATE_FORMAT(date, '%D %b %y') 'da',TIME_FORMAT(start_at, '%h:%i %
       <td class='font-weight-bold text-center col text-truncate border-0'><h5>Start At</h5></td>
       <td class='font-weight-bold text-center col text-truncate border-0'><h5>End At</h5></td>
       <td class='font-weight-bold text-center col text-truncate border-0'><h5>Venue</h5></td>
-      <td class='font-weight-bold text-center col text-truncate border-0'><h5>For</h5></td>
-      <td class='font-weight-bold text-center col text-truncate border-0'><h5>Contact</h5></td>
       <td class='font-weight-bold text-center col text-truncate border-0'><h5>Rating</h5></td>";
       if($login['logged_in']!=1)
         echo "</tr>";
@@ -44,8 +42,6 @@ while($r=$result->fetch_assoc()){
               <td class='text-center col text-truncate border-0'>$r[sti]</td>
               <td class='text-center col text-truncate border-0'>$r[eti]</td>
               <td class='text-center col text-truncate border-0'>$r[venue]</td>
-              <td class='text-center col text-truncate border-0'>$r[for_people]</td>
-              <td class='text-center col text-truncate border-0'>$r[contact]</td>
               <td class='text-center col text-truncate border-0'>$r[rating]</td>";
               if($login['logged_in']!=1)
                 echo "</tr>";
