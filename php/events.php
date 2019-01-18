@@ -16,21 +16,21 @@ $sql="select *,DATE_FORMAT(date, '%D %b %y') 'da',TIME_FORMAT(start_at, '%h:%i %
   echo "<table class='table'>
   <tr class='card-body shadow p-3 rounded bg-yellow row' id='t'>
 
-      <td class='font-weight-bold col border-0'><h4>Name</h4></td>
-      <td class='font-weight-bold  col-2 border-0'><h4>Description</h4></td>
-      <td class='font-weight-bold text-center col border-0'><h4>Date</h4></td>
-      <td class='font-weight-bold text-center col border-0'><h4>Start At</h4></td>
-      <td class='font-weight-bold text-center col border-0'><h4>End At</h4></td>
-      <td class='font-weight-bold text-center col border-0'><h4>Venue</h4></td>
-      <td class='font-weight-bold text-center col-1 border-0'><h4>For</h4></td>
-      <td class='font-weight-bold text-center col border-0'><h4>Contact</h4></td>
-      <td class='font-weight-bold text-center col-1 border-0'><h4>Rating</h4></td>";
+      <td class='font-weight-bold col text-truncate border-0'><h5>Name</h5></td>
+      <td class='font-weight-bold col-sm-1 text-truncate border-0'><h5>Desc.</h5></td>
+      <td class='font-weight-bold text-center col text-truncate border-0'><h5>Date</h5></td>
+      <td class='font-weight-bold text-center col text-truncate border-0'><h5>Start At</h5></td>
+      <td class='font-weight-bold text-center col text-truncate border-0'><h5>End At</h5></td>
+      <td class='font-weight-bold text-center col text-truncate border-0'><h5>Venue</h5></td>
+      <td class='font-weight-bold text-center col text-truncate border-0'><h5>For</h5></td>
+      <td class='font-weight-bold text-center col text-truncate border-0'><h5>Contact</h5></td>
+      <td class='font-weight-bold text-center col text-truncate border-0'><h5>Rating</h5></td>";
       if($login['logged_in']!=1)
         echo "</tr>";
 
       else
-       echo "  <td class='font-weight-bold text-center col border-0'><h4>Feedback</h4></td>
-                <td class='font-weight-bold text-center col border-0'><h4>Going?</h4></td></tr>  ";
+       echo "  <td class='font-weight-bold text-center col text-truncate border-0'><h5>Feedback</h5></td>
+                <td class='font-weight-bold text-center col text-truncate border-0'><h5>Going?</h5></td></tr>  ";
 
     if($result->num_rows>0){
 
@@ -38,20 +38,20 @@ while($r=$result->fetch_assoc()){
 
   $check_value=check_event($r['id']);
   echo "    <tr class='card-body p-4 shadow rounded row'>
-              <td class=' col'><a href='#' id='event_desc$r[id]'>$r[name]</a></td>
-              <td class=' col-2 text-truncate'>$r[description]</td>
-              <td class='text-center col'>$r[da]</td>
-              <td class='text-center col'>$r[sti]</td>
-              <td class='text-center col'>$r[eti]</td>
-              <td class='text-center col'>$r[venue]</td>
-              <td class='text-center col-1'>$r[for_people]</td>
-              <td class='text-center col'>$r[contact]</td>
-              <td class='text-center col-1'>$r[rating]</td>";
+              <td class='col text-truncate border-0'><a href='#' id='event_desc$r[id]'>$r[name]</a></td>
+              <td class='col-sm-1 text-truncate border-0'>$r[description]</td>
+              <td class='text-center col text-truncate border-0'>$r[da]</td>
+              <td class='text-center col text-truncate border-0'>$r[sti]</td>
+              <td class='text-center col text-truncate border-0'>$r[eti]</td>
+              <td class='text-center col text-truncate border-0'>$r[venue]</td>
+              <td class='text-center col text-truncate border-0'>$r[for_people]</td>
+              <td class='text-center col text-truncate border-0'>$r[contact]</td>
+              <td class='text-center col text-truncate border-0'>$r[rating]</td>";
               if($login['logged_in']!=1)
                 echo "</tr>";
               else
-                echo "  <td class='text-center col'><a href='/evem/php/feedback.php?i=$r[id]'>Feedback</a></td>
-                      <td class='text-center col'><label><input type='checkbox' class='ios-switch bigswitch' id='toggle$r[id]' onclick='go$r[id]()'/><div><div></div></div></label>
+                echo "  <td class='text-center col text-truncate border-0'><a class='text-center' href='/evem/php/feedback.php?i=$r[id]'>Feedback</a></td>
+                      <td class='text-center col text-truncate border-0'><label><input type='checkbox' class='ios-switch bigswitch' id='toggle$r[id]' onclick='go$r[id]()'/><div><div></div></div></label>
                       <script>
                       document.getElementById('toggle$r[id]').checked =$check_value;
                       function go$r[id](){
