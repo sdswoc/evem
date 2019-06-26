@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Forget confirm_new_password</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="/evem/css/forget_password.css">
+    <link rel="stylesheet" href="/dist/css/forget_password.css">
   </head>
   <body>
 <div class="wrapper fadeInDown">
@@ -79,7 +79,7 @@ $(function(){
         event.preventDefault();
         $.ajax({
             type:"post",
-            url:"/evem/php/check_email.php",
+            url:"/php/check_email.php",
             data:{email:email_input },
             success:function(response){
                 var email_match=JSON.parse(response);
@@ -119,7 +119,7 @@ $(".back").click(function(event){
 $("#enter_email_back").click(function(event){
     event.preventDefault();
 
-    window.location.replace('/evem/modals/login_modal.php');
+    window.location.replace('/modals/login_modal.php');
 });
 $("#check_security_ans").click(function(event){
 
@@ -149,11 +149,11 @@ if(flag)
   var password=$('#new_password').val();
   $.ajax({
       type:"post",
-      url:"/evem/php/change_password.php",
+      url:"/php/change_password.php",
       data:{new_password:password ,email:email},
       success:function(response){
       alert(response);
-      window.location.replace('/evem/modals/login_modal.php');
+      window.location.replace('/modals/login_modal.php');
       }
   });
 }
@@ -176,11 +176,6 @@ function pass_check() {
   }
 }
 }
-
-
-
-
-
 </script>
 </body>
 </html>

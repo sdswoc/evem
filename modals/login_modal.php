@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <title>Login/Signup</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="/evem/css/bootstrap.min.css" >
-  <link rel="stylesheet" href="/evem/css/login.css">
+  <link rel="stylesheet" href="/dist/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="/dist/css/login.css">
   </head>
   <body>
     <div class="wrapper fadeInDown">
@@ -18,7 +18,7 @@
   </ul>
     <!-- Icon -->
     <div class="fadeIn first">
-      <img src='/evem/images/user.png' id="icon" alt="User Icon" style="width:300px" />
+      <img src='/dist/images/user.png' id="icon" alt="User Icon" style="width:300px" />
     </div>
 
     <!-- Login Form -->
@@ -35,12 +35,12 @@
   </div>
   <!-- Remind Passowrd -->
   <div id="formFooter">
-    <a class="underlineHover" href="/evem/modals/forget_password_modal.php">Forgot Password?</a>
+    <a class="underlineHover" href="/modals/forget_password_modal.php">Forgot Password?</a>
   </div>
   </div>
   <div id='signup'>
 	    <p>*All fields are required</p>
-      <form action="/evem/php/signup.php" method="post">
+      <form action="/php/signup.php" method="post">
       <input type="text"  name="name" placeholder="Name" required="required"> <br>
       <input type="password" name="password" id="p" placeholder="Password" required="required" onkeyup="pass_check()"> <br><label id="password_length_check_result"></label> <br>
       <input type="password" name="password2" id="p2" placeholder="Confirm Passowrd" required="required" onkeyup="pass_check()"> <br><label id="pass"></label> <br>
@@ -90,7 +90,7 @@
   </div>
   <!-- Remind Passowrd -->
   <div id="formFooter">
-    <a class="underlineHover" href="/evem/index.php">Return To Homepage</a>
+    <a class="underlineHover" href="/index.php">Return To Homepage</a>
   </div>
 </div>
 		</div>
@@ -98,7 +98,7 @@
 
 </div>
 </div>
-<script src="/evem/jquery/jquery-2.1.1.min.js">
+<script src="/dist/jquery/jquery-2.1.1.min.js">
 
 </script>
 
@@ -119,12 +119,12 @@ $('#login_button').on('click', function (e) {
 
   $.ajax({
       type:"post",
-      url:"/evem/php/login.php",
+      url:"/php/login.php",
       data:{email:email_input,password:password_input },
       success:function(response){
         if (response=="true") {
             $('#login_modal_msg').empty();
-            window.location.replace('/evem/welcome.php');
+            window.location.replace('/welcome.php');
         }
          else if(response=="false")
           $('#login_modal_msg').html("INVALID USERNAME OR PASSWORD");
@@ -134,7 +134,7 @@ $('#login_button').on('click', function (e) {
 });
 
   function go_index(){
-    window.location.assign("/evem/index.php")
+    window.location.assign("/index.php")
   }
 
 
@@ -159,7 +159,7 @@ $("#signup_email").keyup(function(event) {
 
   $.ajax({
       type:"post",
-      url:"/evem/php/check_email_signup.php",
+      url:"/php/check_email_signup.php",
       data:{email:email_input},
       success:function(response){
 
@@ -178,7 +178,7 @@ $("#username").keyup(function(event) {
 
   $.ajax({
       type:"post",
-      url:"/evem/php/check_username_signup.php",
+      url:"/php/check_username_signup.php",
       data:{username:username_input},
       success:function(response){
 

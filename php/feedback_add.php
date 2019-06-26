@@ -8,6 +8,9 @@ $username=$_SESSION[username];
 $sql="insert into feedback values($rating,'$feedback','$username',$id,now());";
 $conn->query($sql);
 echo "$sql";
-header( "Location: http://localhost/evem/php/feedback.php?i=$id" );
+$host  = $_SERVER['HTTP_HOST'];
+$uri="/php/feedback.php?i=$id";
+$feedback_add_uri="http://".$host.$uri;
+header( "Location: $feedback_add_uri" );
 
  ?>

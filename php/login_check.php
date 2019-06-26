@@ -7,7 +7,7 @@ $result=$conn->query($login_check);
 $r=$result->fetch_assoc();
 if($r['logged_in']!=1)
 {
-  $uri="/evem/index.php";
+  $uri="/index.php";
   $index_url="http://".$host.$uri;
   if($_SERVER[REQUEST_URI]!==$uri){
      session_destroy();
@@ -15,14 +15,14 @@ if($r['logged_in']!=1)
    }
  }
  else{
-   $uri="/evem/welcome.php";
+   $uri="/welcome.php";
    $welcome_url="http://".$host.$uri;
    $_SESSION[id]=$r[id];
    $_SESSION[name]=$r[name];
    $_SESSION[email]=$r[email];
    $_SESSION[username]=$r[username];
    $_SESSION[organizer]=$r[organizer];
-   if($_SERVER[REQUEST_URI]==="/evem/index.php")
+   if($_SERVER[REQUEST_URI]==="/index.php")
       header("Location: $welcome_url");
   
  }

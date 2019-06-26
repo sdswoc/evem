@@ -4,7 +4,7 @@ include('conn.php');
 include('check_event_user.php');
 
 $host  = $_SERVER['HTTP_HOST'];
-$uri="/evem/index.php";
+$uri="/index.php";
 $index_url="http://".$host.$uri;
 
 $login_check="select logged_in from users where logged_in=1;";
@@ -46,7 +46,7 @@ while($r=$result->fetch_assoc()){
               if($login['logged_in']!=1)
                 echo "</tr>";
               else
-                echo "  <td class='text-center col text-truncate border-0'><a class='text-center' href='/evem/php/feedback.php?i=$r[id]'>Feedback</a></td>
+                echo "  <td class='text-center col text-truncate border-0'><a class='text-center' href='/php/feedback.php?i=$r[id]'>Feedback</a></td>
                       <td class='text-center col text-truncate border-0'><label><input type='checkbox' class='ios-switch bigswitch' id='toggle$r[id]' onclick='go$r[id]()'/><div><div></div></div></label>
                       <script>
                       document.getElementById('toggle$r[id]').checked =$check_value;
@@ -56,7 +56,7 @@ while($r=$result->fetch_assoc()){
                       }
                       $('#event_desc$r[id]').click(function(event){
                         event.preventDefault();
-                        window.location.replace('/evem/php/event_desc.php?i=$r[id]');
+                        window.location.replace('/php/event_desc.php?i=$r[id]');
                       });
                       </script>
                       </td>

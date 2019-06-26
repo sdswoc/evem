@@ -38,7 +38,7 @@ while (  $r=$result->fetch_assoc()) {
               <td class='col'>$r[contact]</td>
               <td class='col'>$r[auth]</td>
               <td class='col'>$r[resources]</td>
-              <td class='col'> <a href='/evem/php/event_edit.php?id=$r[id]'>Edit</a></td>
+              <td class='col'> <a href='/php/event_edit.php?id=$r[id]'>Edit</a></td>
               </tr>";
               $i++;
 }

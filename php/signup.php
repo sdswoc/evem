@@ -19,7 +19,7 @@ $conn->query($create_event_table_user);
 if ($conn->query($sql)==true) {
     $_SESSION[msg_signup]="Signup Succesful";
       $host  = $_SERVER['HTTP_HOST'];
-      $uri="/evem/modals/login_modal.php";
+      $uri="/modals/login_modal.php";
       $index_url="http://".$host.$uri;
 header( "Location: $index_url" );
 }
