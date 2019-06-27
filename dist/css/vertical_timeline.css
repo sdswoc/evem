@@ -1,0 +1,130 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+
+#ed {
+  display: flex;
+   align-items: center;
+   justify-content: center;
+   min-height: 100vh;
+   width: auto;
+   margin: 0;
+   font-family:Raleway;
+   font-weight: 300;
+   color: #333;
+   box-sizing: border-box;
+  }
+#ed * {
+  box-sizing: border-box;
+}
+
+.time {
+  width: 100%;
+   max-width: 1200px;
+   background: #fff;
+   padding: 100px 50px;
+   position: relative;
+   }
+.time:before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: calc(33% + 15px);
+  bottom: 0px;
+  width: 4px;
+  background: #ddd;
+}
+.time:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.entry {
+  clear: both;
+  text-align: left;
+  position: relative;
+}
+.entry .title {
+  margin-bottom: .5em;
+  float: left;
+  width: 33%;
+  padding-right: 30px;
+  text-align: right;
+  position: relative;
+}
+.entry .title:before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 4px solid salmon;
+  background-color: #fff;
+  border-radius: 100%;
+  top: 15%;
+  right: -8px;
+  z-index: 9;
+}
+.entry .title h3#d {
+  margin: 0;
+  font-size: 160%;
+}
+.entry .title h3 {
+  margin: 0;
+  font-size: 175%;
+}
+.entry .title p {
+  margin: 0;
+  font-size: 125%;
+}
+.entry .title hr {
+  border: 2px solid grey;
+}
+.entry .timebody {
+  margin: 0 0 3em;
+  float: right;
+  width: 66%;
+  padding-left: 30px;
+}
+.entry .timebody p {
+  line-height: 1.4em;
+}
+.entry .timebody p#en {
+  margin-top: -10px;
+margin-bottom: 0px;
+  font-size: 280%;
+  font-weight: bold;
+
+}
+.entry .timebody ul {
+
+  color: #aaa;
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-bottom: 2vh;
+  list-style-type: none;
+}
+.entry .timebody ul li {
+    font-size: 150%;
+  color: grey;
+  line-height: 1.6em;
+  margin-right: .5em;
+}
+.entry .timebody ul li#desc {
+    font-size: 200%;
+  color: brown;
+}
+  .entry .timebody ul li#contact {
+    font-size: 110%;  color: #494949;
+    text-align: right;
+    line-height: 1.2em;
+}
+.entry .timebody ul li#rating {
+  font-size: 110%;  color: #06116B;
+  text-align: right;
+    line-height: 1.2em;
+}
+.entry .timebody ul li#feedback {
+  font-size: 95%;  color: black;
+  padding-top: 10px;
+  text-align: right;
+
+}

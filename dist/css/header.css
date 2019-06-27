@@ -1,0 +1,227 @@
+html{
+font-size: 1vw;
+}
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+body{background-color: #56BAED;}
+.mainbody{
+height: 100%;
+padding: 0px 100px 100px 100px;
+margin-top: 90px;
+background-color: #56BAED;
+font-size:1vw;
+}
+.bg-yellow{
+  background-color: #FFDB70;
+}
+#t{
+  color: #660B00;
+}
+textarea {
+   resize: none;
+}
+.border-0{
+  border: none;
+}
+.card{
+		 border: none;
+		max-width: 1200px;
+		margin: 0 auto; /* Added */
+	        float: none; /* Added */
+					-webkit-border-radius: 10px 10px 10px 10px;
+					border-radius: 10px 10px 10px 10px;
+
+				}
+ul.wtf-menu{
+	background: #000957;
+	border-radius: 3px;
+
+	font-family: Raleway;
+margin: 0px;
+padding: 0.8em 0.8em;
+	color: white;
+display: -webkit-flex;
+display: flex;
+list-style:none;
+
+	/* 	Dropdown shadow */
+	-webkit-box-shadow: 0 4px 2px 0 rgba(0,0,0,.3);
+	box-shadow: 0 4px 2px 0 rgba(0,0,0,.3);
+}
+
+ul.wtf-menu li{
+	list-style: none;
+	float: left;
+	padding: 0px 0px;
+	margin: 0px 0px;
+	line-height: 50px;
+	display: block;
+	position: relative;
+	text-transform: uppercase;
+	text-align: right;
+
+}
+ul.wtf-menu li#logo{
+
+  margin-right: auto;
+  font-weight: bold;
+  font-size: 30px;
+  text-transform: lowercase;
+}
+ul.wtf-menu li.parent{
+  min-width: 110px;
+  width: auto;
+text-align:center;
+}
+ul.wtf-menu li a{
+	color: white;
+	padding: 0px 15px;
+	margin: 0px 0px;
+
+	vertical-align: middle;
+	text-decoration: none;
+	 outline: 0;
+	 text-align: right;
+}
+.wtf-menu ul.submenu li a{
+		color:black;
+}
+.wtf-menu ul.submenu li:hover{
+	background-color: #7D7D7D;
+}
+
+.wtf-menu ul.submenu{
+
+	min-width: 110px;
+  width: auto;
+	padding: 0px 0px;
+	margin: 0px;
+	background: #fff;
+	position: absolute;
+	top:50px;
+font-size: 15px;
+  right: 0;
+	display:none;
+
+	/* 	Dropdown shadow */
+	-webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.3);
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,.3);
+}
+
+
+.wtf-menu ul.submenu ul{
+	left: 180px;
+	top:0px;
+}
+
+.wtf-menu ul.submenu li{
+		color:black;
+	padding: 0px;
+	margin: 0px;
+	display: block;
+	float: none;
+	border-bottom: 1px solid #eee;
+	line-height: 30px;
+	text-transform: none;
+}
+
+
+.wtf-menu ul.submenu li a{
+		color:black;
+}
+.wtf-menu ul.submenu li:last-child{
+	border: none;
+}
+
+
+/* Add arrows */
+
+ul.wtf-menu li.parent a{
+	padding: 0px 20px 0px 15px;
+}
+
+
+ul.wtf-menu ul li.parent:after{
+	font-family: 'Fontawesome';
+	content: "\f0da";
+	color:#999;
+	position: absolute;
+	right: 10px;
+	top:0px;
+	margin-left: 5px;
+}
+
+
+
+
+
+/* Menu-2 */
+
+.menu-2 .wtf-menu li:hover > ul{
+	display:block;
+	-moz-animation: fadeInDown .3s ease-in ;
+    -webkit-animation: fadeInDown .3s ease-in ;
+    animation:fadeInDown .3s ease-in ;
+}
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+
+
+
+.menu-2 .wtf-menu ul li:hover > ul{
+	display:block;
+	-moz-animation: fadeInLeft .3s ease-in ;
+    -webkit-animation: fadeInLeft .3s ease-in ;
+    animation:fadeInLeft .3s ease-in ;
+}
+
+
+
+
+
+#mynavbar{
+   z-index:100;
+	 border: none;
+	 margin: 0px;
+	position: fixed;
+  top: 0;
+  width: 100%;
+font-size: 20px;
+}
+
+
+/* Top and Bottom borders come in */
+nav.menu-2 ul.topBotomBordersIn  a#bor:before, nav.menu-2 ul.topBotomBordersIn  a#bor:after
+{
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: white;
+    content: "";
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+nav.menu-2 ul.topBotomBordersIn  a#bor:before
+{
+    top: 0px;
+    transform: translateY(-10px);
+}
+
+nav.menu-2 ul.topBotomBordersIn  a#bor:after
+{
+    bottom: 0px;
+    transform: translateY(10px);
+}
+
+nav.menu-2 ul.topBotomBordersIn  a#bor:hover:before, nav.menu-2 ul.topBotomBordersIn  a#bor:hover:after
+{
+    opacity: 1;
+    transform: translateY(0px);
+}
+nav.menu-2 ul.container a#bor:active {
+border: none;
+}
+
+#contact_us{
+max-width: 980px;
+}
